@@ -6,12 +6,12 @@ __date__ = "July 2019"
 
 import os
 
-def fileRemoval(i,sql,cur,full_fit,file):
+def fileRemoval(i, sql, cur, full_fit, logfile):
         cur.execute(sql, [full_fit])
         if cur.rowcount == 1:
                 try:
-			file.write(i + '\n')
+			logfile.write(i + '\n')
                         os.remove(i)
                 except Exception as e:
                         e = sys.exc_info()
-                        file.write(str(e[1]))
+                        logfile.write(str(e[1]))

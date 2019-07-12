@@ -6,12 +6,12 @@ __date__ = "June 2018"
 
 import json
 
-def readJson(filename,CWD):
-    JSON_CONFIG_FILE_PATH='%s/%s' % (CWD, 'config.json')
-    CONFIG_PROPERTIES={}
+def readJson(filename, CWD):
+    JSON_CONFIG_FILE_PATH = '%s/%s' % (CWD, 'config.json')
+    CONFIG_PROPERTIES = {}
     try:
         with open(JSON_CONFIG_FILE_PATH) as data_file:
-            CONFIG_PROPERTIES=json.load(data_file)
+            CONFIG_PROPERTIES = json.load(data_file)
         return CONFIG_PROPERTIES
     except IOError as e:
             print e
