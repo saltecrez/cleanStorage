@@ -12,7 +12,6 @@ __date__ = "July 2019"
 import sys
 import os
 import MySQLdb
-from shutil import Error
 from readJson import readJson
 from fileRemoval import fileRemoval
 

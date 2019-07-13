@@ -1,0 +1,9 @@
+This tool is used for removing the storage files
+on an archiving test machine with limited local
+storage.
+
+Connects to a remote host, queries the database
+and if the file in the storage of the test machine
+has been already archived on the remote machine
+(line in the DB), the file in the storage of the
+test machine is removed. 
