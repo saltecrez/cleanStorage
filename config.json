@@ -1,11 +1,10 @@
 {
-        "storage_folder": "/mnt/archive/store/",
+        "storage_folder": "/home/archivio/from_git/test_storage/",
         "logfile": "log.txt",
-        "remote_db_host": "150.135.245.21",
-        "remote_db_password": "Cl3anStrg.",
-        "remote_db_user": "clean_storage",
-        "remote_db_schema": "metadata",
-        "sql_luci": "select id from luci where file_name=%s;",
-        "sql_mods": "select id from mods where file_name=%s;",
-        "sql_lbc": "select id from lbc where file_name=%s;"
+        "remote_db_host": "localhost",
+        "remote_db_password": "Archa123.",
+        "remote_db_user": "archa",
+        "remote_db_schema": "metadata_asiago",
+	"file_init": ["SC"],
+	"sql_instr": ["SBI"]
 }

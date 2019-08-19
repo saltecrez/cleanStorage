@@ -31,23 +31,23 @@ walk_dir = cnf['storage_folder']
 db = MySQLdb.connect(cnf['remote_db_host'], cnf['remote_db_user'], cnf['remote_db_password'], cnf['remote_db_schema'])
 cur = db.cursor()
 
+# instruments list
+instr_list = cnf['file_init'] 
+sql_list = cnf['sql_instr'] 
+
 for root, subdirs, files in os.walk(walk_dir):
 
 	for filename in files:
 
 		file_path = os.path.join(root, filename)
-		ftl = filename[:3]
+		ftl = filename[:2]
 
-		if ftl == 'luc':
-			sql = cnf['sql_luci']
-			fileRemoval(file_path, sql, cur, filename, filelog)
-
-		elif ftl == 'mod':
-        	        sql = cnf['sql_mods']
-			fileRemoval(file_path, sql, cur, filename, filelog)
-
-		elif ftl == 'lbc':
-        	        sql = cnf['sql_lbc']
-			fileRemoval(file_path, sql, cur, filename, filelog)
+		for j in range(len(instr_list)):
+			if ftl == instr_list[j]:
+				sql = 'select id from ' + sql_list[j] + ' where file_name=%s;' 
+				fileRemoval(file_path, sql, cur, filename, filelog)
+				break
+			else:
+				continue
 
 filelog.close()
