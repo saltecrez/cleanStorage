@@ -22,10 +22,10 @@
 
 - **Requirements**:
     - python3
-    - pip install astropy
-    - pip install sqlalchemy
-    - pip install pymysql
+    - pip3 install --user astropy
+    - pip3 install --user sqlalchemy
+    - pip3 install --user pymysql
 
 - **Usage**:
     - configure the conf.json file
-    - /usr/bin/python main.py
+    - /usr/bin/python3 main.py
