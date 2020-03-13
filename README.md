@@ -9,7 +9,7 @@
 - **Configuration parameters**:
 
       "storage_folder": path to the storage folder to be checked 
-      "months_nr": number of months within wich the data needs to be preserved on the machine. Files with dates older than *today-months_nr* will be discarded.
+      "months_nr": number of months within which the data needs to be preserved on the machine. Files with dates older than *today-months_nr* will be discarded.
       "db_host": IP address /name of the host containing the local database (usually localhost)
       "db_pwd": local database password
       "db_user": local database user

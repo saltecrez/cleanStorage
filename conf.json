@@ -1,13 +1,13 @@
 {
-        "storage_folder": "/home/archivio/tmp_storage/",
+        "storage_folder": "/home/archive/temporary_storage/",
         "months_nr": "3",
         "db_host": "localhost",
-        "db_pwd": "Archa123.",
-        "db_user": "archa",
-        "db_name": "metadata_asiago",
-        "db_port": "3307",
-        "email": "elisa.londero@inaf.it",
-        "sender": "archivio@hactar",
-        "smtp_host": "mail.oapd.inaf.it",
+        "db_pwd": "s3cret",
+        "db_user": "archa",  
+        "db_name": "metadata",
+        "db_port": "3306",
+        "email": "average.employee@gmail.com",
+        "sender": "archive@machine",
+        "smtp_host": "gmail.com",
         "db_tables": ["AFO","ECH","SBI"]
 }
