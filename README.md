@@ -4,21 +4,21 @@
 
 - **Targets**: Asiago first ingestion machine, test machines (all nodes) - more generally, all the machines that host a temporary storage. 
 
-- **Description**: Files in the storage are selected according to their date. If older than the number of months specified in the configuration file, their checksum is calculated, compared to the value found in database and if they match, the file is removed. 
+- **Description**: Files in the storage are selected according to their date. If older than the number of months specified in the configuration file, their checksum is calculated, it is compared to the value found in database and if they match, the file is removed. 
 
 - **Configuration parameters**:
 
-      "storage_folder": path to the storage folder to be checked 
-      "months_nr": number of months within which the data needs to be preserved on the machine. Files with dates older than *today-months_nr* will be discarded.
-      "db_host": IP address /name of the host containing the local database (usually localhost)
-      "db_pwd": local database password
-      "db_user": local database user
-      "db_name": name of the local database to be queried
-      "db_port": local database port
-      "email": email receiving the alerts
-      "sender": email sender
-      "smtp_host": smtp domain of the local machine sending the email
-      "db_tables": list of tables inside db_name that need to be queried
+      **storage_folder** [string]: path to the storage folder root  
+      **months_nr" [unsigned short]: number of months. Files with dates older than *today-months_nr* will be discarded.
+      **db_host** [string]: IP address / hostname of the host containing the local database (usually localhost)
+      **db_pwd** [string]: local database password
+      **db_user** [string]: local database user
+      **db_name** [string]: name of the local database to be queried
+      **db_port** [unsigned long]: local database port
+      **email** [string]: email receiving the alerts
+      **sender** [string]: email sender
+      **smtp_host** [string]: smtp domain of the local machine sending the email
+      **db_tables** [string vector]: list of tables inside db_name that need to be queried
 
 - **Requirements**:
     - python3
