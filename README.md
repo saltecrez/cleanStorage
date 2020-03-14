@@ -8,17 +8,17 @@
 
 - **Configuration parameters**:
 
-      **storage_folder** [string]: path to the storage folder root  
-      **months_nr" [unsigned short]: number of months. Files with dates older than *today-months_nr* will be discarded.
-      **db_host** [string]: IP address / hostname of the host containing the local database (usually localhost)
-      **db_pwd** [string]: local database password
-      **db_user** [string]: local database user
-      **db_name** [string]: name of the local database to be queried
-      **db_port** [unsigned long]: local database port
-      **email** [string]: email receiving the alerts
-      **sender** [string]: email sender
-      **smtp_host** [string]: smtp domain of the local machine sending the email
-      **db_tables** [string vector]: list of tables inside db_name that need to be queried
+      -storage_folder [string]: path to the storage folder root  
+      -months_nr [unsigned short]: number of months. Files with dates older than *today-months_nr* will be discarded.
+      -db_host [string]: IP address / hostname of the host containing the local database (usually localhost)
+      -db_pwd [string]: local database password
+      -db_user [string]: local database user
+      -db_name [string]: name of the local database to be queried
+      -db_port [unsigned long]: local database port
+      -email [string]: email receiving the alerts
+      -sender [string]: email sender
+      -smtp_host [string]: smtp domain of the local machine sending the email
+      -db_tables [string vector]: list of tables inside db_name that need to be queried
 
 - **Requirements**:
     - python3
