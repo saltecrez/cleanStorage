@@ -46,9 +46,9 @@ def main():
     sender = rj.get_sender();   smtphost = rj.get_smtp_host() 
     recipient = rj.get_recipient() 
 
-    db = MySQLDatabase(dbuser, dbpwd, dbhost, dbport, dbname)
+    db = MySQLDatabase(dbuser, dbpwd, dbname, dbhost, dbport)
 
-    Session = db.create_session()
+    Session = db.mysql_session()
     
     files_list = StorageFilesList().create_selected_list()
 
@@ -76,11 +76,11 @@ def main():
    
                     else:
                         message = 'Severe alert - storage and DB file checksums DO NOT MATCH'
-                        SendEmail(message,recipient,sender,smtphost).send_email()
+                        SendEmail(message,recipient,smtphost,sender).send_email()
     
                 else:
                     message = 'Severe alert - checksum not calculated' 
-                    SendEmail(message,recipient,sender,smtphost).send_email()
+                    SendEmail(message,recipient,smtphost,sender).send_email()
             else:
                 pass
 

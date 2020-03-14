@@ -19,14 +19,14 @@ from sqlalchemy.orm import mapper
 log = LoggingClass('',True).get_logger()
 
 class MySQLDatabase(object):
-    def __init__(self, user, pwd, host, port, dbname):
+    def __init__(self, user, pwd, dbname, host='localhost', port='3306'):
         self.user = user
         self.pwd = pwd
         self.host = host
         self.port = port
         self.dbname = dbname
 
-    def create_session(self):
+    def _create_session(self):
         sdb = 'mysql+pymysql://%s:%s@%s:%s/%s'%(self.user,self.pwd,self.host,self.port,self.dbname)
         try:
             engine = create_engine(sdb)
@@ -36,14 +36,21 @@ class MySQLDatabase(object):
             msg = "Database session creation excep - MySQLDatabase.create_session -- "
             log.error("{0}{1}".format(msg,e))
 
-    def validate_session(self):
+    def _validate_session(self):
         try:
-            connection = self.create_session().connection()
+            connection = self._create_session().connection()
             return True
         except Exception as e:
             msg = "Database session validation excep - MySQLDatabase.validate_session -- "
             log.error("{0}{1}".format(msg,e))
             return False
+
+    def mysql_session(self):
+       Session = self._validate_session()
+       if Session:
+           return self._create_session() 
+       else:
+           exit(1)
 
     def close_session(self):
         try:
